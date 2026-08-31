@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="css/estilos.css">
+      <!-- FUENTE GOOGLE FONTS : Poppins -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+      <!-- ICONS: Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  
+      <!-- ICONS: Line Awesome -->
+      <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  
+      <!-- Animaciones AOS -->
+      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+</head>
+<body>
+    <div class="hm-header">
+        <div class="container">
+            <div class="header-menu">
+                <div class="hm-logo">
+                    <a href="index.html">
+                        <img src="img/logo-home-master-store.png" alt="">
+                    </a>
+                </div>
+
+                <nav class="hm-menu">
+                    <ul>
+                        <li><a href="http://">Productos</a></li>
+                        <li><a href="http://">Campañas</a></li>
+                        <li><a href="http://">Nosotros</a></li>
+                        <li><a href="http://">Contacto</a></li>
+                    </ul>
+
+                    <div class="hm-icon-cart">
+                        <a href="carrito.html">
+                            <i class="las la-shopping-cart"></i>
+                            <span id="contadorCarrito">0</span> 
+                        </a>
+                    </div>
+
+                    <div class="icon-menu">
+                        <button type="button"><i class="fas fa-bars"></i></button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <h1>Carrito de Compras</h1>
+    <ul id="listaCarrito"></ul>
+    <h1 id="totalCarrito">Total: S/ 0.00</h1>
+    <button id="checkoutBtn" class="hm-btn btn-primary">Proceder al Pago</button>
+
+
+    <footer>
+        <div class="container">
+            <div class="foo-row">
+                <div class="foo-col">
+                    <h2>Suscríbete <br>a nuestro newsletter</h2>
+                    <form action="" method="GET">
+                        <div class="f-input">
+                            <input type="text" placeholder="Ingrese su correo">
+                            <button type="submit" class="hm-btn-round btn-primary"><i class="far fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="foo-col">
+                    <ul>
+                       <li><a href="http://">Productos</a></li>
+                       <li><a href="http://">Campañas</a></li>
+                       <li><a href="http://">Nosotros</a></li>
+                       <li><a href="http://">Contacto</a></li>
+                       <li><a href="http://">Enlace 01</a></li>
+                       <li><a href="http://">Enlace 02</a></li>
+                       <li><a href="http://">Enlace 03</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="foo-copy">
+        <div class="container">
+            <p>HM STORE 2021 © Todos los derechos reservados</p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Función para cargar el carrito al abrir esta página y mostrar los productos con sus imágenes
+        function cargarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const listaCarrito = document.getElementById('listaCarrito');
+            listaCarrito.innerHTML = '';
+
+            if (carrito.length === 0) {
+                listaCarrito.innerHTML = '<li>El carrito está vacío</li>';
+            } else {
+                carrito.forEach((producto, index) => {
+                    const item = document.createElement('li');
+                    item.innerHTML = `
+                        <div class="producto-carrito">
+                            <img src="${producto.imagen}" alt="${producto.nombre}" class="imagen-producto-carrito">
+                            <div class="info-producto">
+                                <h3>${producto.nombre}</h3>
+                                <p>${producto.precio}</p>
+                            </div>
+                            <button onclick="eliminarDelCarrito(${index})" class="btn-eliminar">Eliminar</button>
+                        </div>
+                    `;
+                    listaCarrito.appendChild(item);
+                });
+            }
+        }
+
+        // Función para eliminar un producto del carrito
+        function eliminarDelCarrito(index) {
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            carrito.splice(index, 1); // Elimina el producto en la posición "index"
+            localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualiza el localStorage
+            cargarCarrito(); // Recarga la lista del carrito para reflejar los cambios
+        }
+
+        // Cargar el carrito al abrir la página
+        cargarCarrito();
+    </script>
+
+    <!-- Estilos básicos para la lista del carrito -->
+    <style>
+        .producto-carrito {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .imagen-producto-carrito {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .info-producto {
+            flex-grow: 1;
+        }
+        .btn-eliminar {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-eliminar:hover {
+            background-color: #ff3333;
+        }
+    </style>
+</body>
+<script>
+    // Función para cargar el carrito al abrir esta página y mostrar los productos con sus imágenes
+    function cargarCarrito() {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const listaCarrito = document.getElementById('listaCarrito');
+        const totalCarrito = document.getElementById('totalCarrito');
+        listaCarrito.innerHTML = '';
+        let total = 0;
+
+        if (carrito.length === 0) {
+            listaCarrito.innerHTML = '<li>El carrito está vacío</li>';
+            totalCarrito.textContent = "Total: S/ 0.00";
+        } else {
+            carrito.forEach((producto, index) => {
+                const item = document.createElement('li');
+                item.innerHTML = `
+                    <div class="producto-carrito">
+                        <img src="${producto.imagen}" alt="${producto.nombre}" class="imagen-producto-carrito">
+                        <div class="info-producto">
+                            <h3>${producto.nombre}</h3>
+                            <p>${producto.precio}</p>
+                        </div>
+                        <button onclick="eliminarDelCarrito(${index})" class="btn-eliminar">Eliminar</button>
+                    </div>
+                `;
+                listaCarrito.appendChild(item);
+
+                // Convertir el precio a número y sumar al total
+                const precio = parseFloat(producto.precio.replace('S/', '').trim());
+                total += precio;
+            });
+
+            // Mostrar el total en el elemento totalCarrito
+            totalCarrito.textContent = `Total: S/ ${total.toFixed(2)}`;
+        }
+    }
+
+    // Función para eliminar un producto del carrito y actualizar el total
+    function eliminarDelCarrito(index) {
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.splice(index, 1); // Elimina el producto en la posición "index"
+        localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualiza el localStorage
+        cargarCarrito(); // Recarga la lista del carrito para reflejar los cambios
+    }
+
+    // Cargar el carrito al abrir la página
+    cargarCarrito();
+</script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    
+    AOS.init({
+        duration: 1200,
+    })
+
+
+</script>
+
+</html>
