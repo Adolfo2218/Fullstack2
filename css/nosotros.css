@@ -1,0 +1,154 @@
+/* =========================================
+   Página Nosotros · Tienda de Semillas
+   (usa css/estilos.css como base; esto son
+   solo los estilos propios de esta página)
+========================================= */
+
+.nosotros-section {
+    padding: 60px 0 20px;
+}
+
+/* ---------- Quiénes somos ---------- */
+.nosotros-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.nosotros-texto h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #2f4f3e;
+}
+
+.nosotros-texto p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4a4a4a;
+    margin-bottom: 14px;
+}
+
+.nosotros-imagen img {
+    width: 100%;
+    height: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ---------- Lo que nos mueve ---------- */
+.nosotros-valores {
+    margin-bottom: 70px;
+    text-align: center;
+}
+
+.nosotros-valores h2 {
+    font-size: 24px;
+    margin-bottom: 32px;
+    color: #2f4f3e;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.valor-item {
+    background-color: #f7f5f0;
+    border-radius: 10px;
+    padding: 32px 24px;
+}
+
+.valor-item i {
+    font-size: 30px;
+    color: #2f4f3e;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.valor-item h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: #22281f;
+}
+
+.valor-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6c766f;
+}
+
+/* ---------- Equipo ---------- */
+.nosotros-equipo {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.nosotros-equipo h2 {
+    font-size: 24px;
+    color: #2f4f3e;
+    margin-bottom: 6px;
+}
+
+.equipo-subtitulo {
+    font-size: 14px;
+    color: #6c766f;
+    margin-bottom: 32px;
+}
+
+.equipo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.equipo-item {
+    padding: 20px 12px;
+}
+
+.equipo-avatar {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background-color: #2f4f3e;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.equipo-item h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+    color: #22281f;
+}
+
+.equipo-item span {
+    font-size: 12px;
+    color: #6c766f;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 860px) {
+    .nosotros-intro {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-imagen {
+        order: -1;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .equipo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

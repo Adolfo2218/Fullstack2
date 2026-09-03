@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Administrador | Tienda de Semillas</title>
+
+    <!-- FUENTE GOOGLE FONTS : Poppins (misma que el resto del sitio) + Playfair Display (para el logo, igual estilo que el header público) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Mis estilos -->
+    <link rel="stylesheet" href="css/usuarios.css">
+</head>
+<body>
+
+    <div class="admin-wrapper">
+
+        <!-- =================================
+           SIDEBAR ADMINISTRADOR
+        ================================== -->
+        <aside class="admin-sidebar">
+            <a href="index.html" class="admin-brand" aria-label="Volver al inicio de la tienda">
+                <img src="img/logo-home-master-store.png" alt="Tienda de Semillas" class="admin-brand-logo">
+            </a>
+
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li class="active"><a href="usuarios.html">Usuarios</a></li>
+                    <li><a href="#">Pedidos</a></li>
+                    <li><a href="#">Reportes</a></li>
+                </ul>
+            </nav>
+
+            <div class="admin-nav-footer">
+                <a href="index.html" id="linkCerrarSesion">Cerrar sesión</a>
+            </div>
+        </aside>
+
+        <!-- =================================
+           CONTENIDO PRINCIPAL
+        ================================== -->
+        <main class="admin-content">
+
+            <header class="admin-topbar">
+                <div>
+                    <h1>Usuarios</h1>
+                    <p class="admin-subtitle">Administra las cuentas registradas en el sistema.</p>
+                </div>
+
+                <a href="nuevou.html" class="btn-primary-admin">
+                    Nuevo usuario
+                </a>
+            </header>
+
+            <p id="avisoExito" class="aviso-exito" hidden></p>
+
+            <section class="admin-toolbar">
+                <input
+                    type="search"
+                    id="buscadorUsuarios"
+                    placeholder="Buscar por nombre, RUN o correo..."
+                    aria-label="Buscar usuarios"
+                >
+                <select id="filtroTipo" aria-label="Filtrar por tipo de usuario">
+                    <option value="">Todos los tipos</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Vendedor">Vendedor</option>
+                    <option value="Cliente">Cliente</option>
+                </select>
+            </section>
+
+            <section class="admin-table-wrap">
+                <table class="tabla-usuarios">
+                    <thead>
+                        <tr>
+                            <th>RUN</th>
+                            <th>Nombre completo</th>
+                            <th>Correo</th>
+                            <th>Comuna</th>
+                            <th>Tipo de usuario</th>
+                            <th class="col-acciones">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTablaUsuarios">
+                        <!-- Filas generadas dinámicamente por js/usuarios.js -->
+                    </tbody>
+                </table>
+
+                <p id="mensajeVacio" class="mensaje-vacio" hidden>
+                    No se encontraron usuarios que coincidan con la búsqueda.
+                </p>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- =================================
+       MODAL: Confirmar cierre de sesión
+    ================================== -->
+    <div class="modal-overlay" id="modalCerrarSesion" hidden>
+        <div class="modal-dialog">
+            <h2>¿Cerrar sesión?</h2>
+            <p>¿Estás seguro de que quieres cerrar sesión?</p>
+            <div class="modal-acciones">
+                <button type="button" class="btn-secundario-admin" id="btnCancelarCerrarSesion">No</button>
+                <button type="button" class="btn-primary-admin" id="btnConfirmarCerrarSesion">Sí</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal de confirmación para "Cerrar sesión".
+        // Autocontenido: no depende de otros archivos js.
+        (function () {
+            const link = document.getElementById("linkCerrarSesion");
+            const modal = document.getElementById("modalCerrarSesion");
+            const btnSi = document.getElementById("btnConfirmarCerrarSesion");
+            const btnNo = document.getElementById("btnCancelarCerrarSesion");
+
+            if (!link || !modal) return;
+
+            link.addEventListener("click", (evento) => {
+                evento.preventDefault();
+                modal.hidden = false;
+            });
+
+            btnNo.addEventListener("click", () => {
+                modal.hidden = true;
+            });
+
+            btnSi.addEventListener("click", () => {
+                window.location.href = link.getAttribute("href");
+            });
+
+            // Cerrar el modal si se hace click fuera del cuadro.
+            modal.addEventListener("click", (evento) => {
+                if (evento.target === modal) {
+                    modal.hidden = true;
+                }
+            });
+
+            // Cerrar el modal con la tecla Escape.
+            document.addEventListener("keydown", (evento) => {
+                if (evento.key === "Escape" && !modal.hidden) {
+                    modal.hidden = true;
+                }
+            });
+        })();
+    </script>
+
+    <script src="js/usudatos.js"></script>
+    <script src="js/usu.js"></script>
+</body>
+</html>

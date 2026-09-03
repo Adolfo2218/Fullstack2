@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Master Store</title>
+    <title>Nosotros | Tienda de Semillas</title>
 
     <!-- FUENTE GOOGLE FONTS : Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,10 +18,9 @@
     <!-- Animaciones AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
-
     <!-- Mis Estilos -->
-     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/nosotros.css">
 
 </head>
 <body>
@@ -32,7 +32,7 @@
                 <div class="header-menu">
 
                     <div class="hm-logo">
-                        <a href="#">
+                        <a href="index.html">
                             <img src="img/logo-home-master-store.png" alt="">
                         </a>
                     </div>
@@ -41,7 +41,7 @@
                         <ul>
                             <li><a href="http://">Productos</a></li>
                             <li><a href="blog.html">Blog</a></li>
-                            <li><a href="http://">Nosotros</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
                             <li><a href="contacto.html">Contacto</a></li>
                             <li><a href="login.html">Login</a></li>
 
@@ -73,71 +73,90 @@
         <div class="header-menu-movil">
             <button class="cerrar-menu"><i class="fas fa-times"></i></button>
             <ul>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Campañas</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="index.html">Productos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
 
     <!-- =================================
-       BLOG
-    ================================== -->
-    <div class="blog-section">
+       NOSOTROS
+    ================================== --> 
+    <div class="nosotros-section">
         <div class="container">
-            <div class="blog-header" data-aos="fade-up">
-                <h1>Blog</h1>
+
+            <div class="header-title" data-aos="fade-up">
+                <h1>Nosotros</h1>
             </div>
 
-            <div class="blog-grid">
+            <!-- QUIÉNES SOMOS -->
+            <div class="nosotros-intro" data-aos="fade-up" data-aos-duration="1000">
+                <div class="nosotros-texto">
+                    <h2>Quiénes somos</h2>
+                    <p>En <strong>Tienda de Semillas</strong> creemos que cualquier persona puede cultivar sus propios alimentos, sin importar el tamaño de su patio o cuánta experiencia tenga. Nacimos como un proyecto pensado para acercar semillas de calidad, packs listos para principiantes y contenido educativo a quienes están dando sus primeros pasos en el huerto.</p>
+                    <p>Nuestra misión es simple: que sembrar sea fácil, accesible y entretenido, ya sea en un balcón, un patio o un huerto completo.</p>
+                </div>
+                <div class="nosotros-imagen">
+                    <img src="img/hands-holding-seeds-stockcake.jpg" alt="Manos sosteniendo semillas de distintos tipos">
+                </div>
+            </div>
 
-                <div class="blog-card" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="blog-card-img">
-                        <a href="blogs/blog1.html">
-                            <img src="img/1.jpg" alt="Cómo germinar semillas en casa">
-                        </a>
-                        <span class="blog-tag tag-tip">Nuevo</span>
+            <!-- LO QUE NOS MUEVE -->
+            <div class="nosotros-valores" data-aos="fade-up" data-aos-duration="1000">
+                <h2>Lo que nos mueve</h2>
+
+                <div class="valores-grid">
+                    <div class="valor-item">
+                        <i class="las la-leaf"></i>
+                        <h3>Sustentabilidad</h3>
+                        <p>Seleccionamos semillas de variedades locales y promovemos prácticas de cultivo respetuosas con el medioambiente.</p>
                     </div>
-                    <div class="blog-card-body">
-                        <a href="blogs/blog1.html">
-                            <h3>Cómo germinar semillas en casa paso a paso</h3>
-                        </a>
-                        <p class="blog-excerpt">Una guía simple para dar el primer paso en tu huerto, desde la elección de la semilla hasta el trasplante.</p>
-                        <a href="blogs/blog1.html" class="blog-readmore">Leer más</a>
+
+                    <div class="valor-item">
+                        <i class="las la-book-open"></i>
+                        <h3>Educación</h3>
+                        <p>Compartimos guías y consejos en nuestro blog para que aprender a cultivar sea parte de la experiencia.</p>
+                    </div>
+
+                    <div class="valor-item">
+                        <i class="las la-users"></i>
+                        <h3>Comunidad</h3>
+                        <p>Creemos en construir una comunidad de personas que comparten la pasión por cultivar sus propios alimentos.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="blog-card" data-aos="fade-up" data-aos-duration="1250">
-                    <div class="blog-card-img">
-                        <a href="blogs/blog2.html">
-                            <img src="img/c-1.jpg" alt="Huerto urbano en espacios pequeños">
-                        </a>
+            <!-- EQUIPO / DESARROLLADORES -->
+            <div class="nosotros-equipo" data-aos="fade-up" data-aos-duration="1000">
+                <h2>El equipo detrás del proyecto</h2>
+                <p class="equipo-subtitulo">Este sitio fue desarrollado como proyecto académico por:</p>
+
+                <div class="equipo-grid">
+                    <div class="equipo-item">
+                        <div class="equipo-avatar">NN</div>
+                        <h3>Nombre Apellido</h3>
+                        <span>Desarrollo Frontend</span>
                     </div>
-                    <div class="blog-card-body">
-                        <a href="blogs/blog2.html">
-                            <h3>Huerto urbano: cultiva aunque no tengas patio</h3>
-                        </a>
-                        <p class="blog-excerpt">Ideas para aprovechar balcones, ventanas y espacios reducidos y tener tu propia cosecha.</p>
-                        <a href="blogs/blog2.html" class="blog-readmore">Leer más</a>
+
+                    <div class="equipo-item">
+                        <div class="equipo-avatar">NN</div>
+                        <h3>Nombre Apellido</h3>
+                        <span>Desarrollo Frontend</span>
+                    </div>
+
+                    <div class="equipo-item">
+                        <div class="equipo-avatar">NN</div>
+                        <h3>Nombre Apellido</h3>
+                        <span>Diseño UI/UX</span>
+                    </div>
+
+                    <div class="equipo-item">
+                        <div class="equipo-avatar">NN</div>
+                        <h3>Nombre Apellido</h3>
+                        <span>Validaciones JavaScript</span>
                     </div>
                 </div>
-
-                <div class="blog-card" data-aos="fade-up" data-aos-duration="1500">
-                    <div class="blog-card-img">
-                        <a href="blogs/blog3.html">
-                            <img src="img/c-2.jpg" alt="Riego eficiente para tus plantas">
-                        </a>
-                    </div>
-                    <div class="blog-card-body">
-                        <a href="blogs/blog3.html">
-                            <h3>Riego eficiente: cuánta agua necesita tu huerto</h3>
-                        </a>
-                        <p class="blog-excerpt">Aprende a leer tu suelo y tus plantas para regar lo justo y evitar problemas de raíz.</p>
-                        <a href="blogs/blog3.html" class="blog-readmore">Leer más</a>
-                    </div>
-                </div>
-
-
             </div>
 
         </div>
@@ -162,7 +181,7 @@
 
                     <div class="foo-col">
                         <ul>
-                            <li><a href="#">Productos</a></li>   
+                            <li><a href="http://">Productos</a></li>   
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="nosotros.html">Nosotros</a></li>
                             <li><a href="contacto.html">Contacto</a></li>
@@ -181,8 +200,6 @@
             </div>
         </div>
 
-    </div>
-    
     <!-- Animaciones : AOS-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
