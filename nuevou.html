@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo usuario - Administrador | Tienda de Semillas</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/usuarios.css">
+</head>
+<body>
+
+    <div class="admin-wrapper">
+
+        <!-- =================================
+           SIDEBAR ADMINISTRADOR
+        ================================== -->
+        <aside class="admin-sidebar">
+            <a href="../index.html" class="admin-brand" aria-label="Volver al inicio de la tienda">
+                <img src="img/logo-home-master-store.png" alt="Tienda de Semillas" class="admin-brand-logo">
+            </a>
+
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li class="active"><a href="usuarios.html">Usuarios</a></li>
+                    <li><a href="#">Pedidos</a></li>
+                    <li><a href="#">Reportes</a></li>
+                </ul>
+            </nav>
+
+            <div class="admin-nav-footer">
+                <a href="../login.html">Cerrar sesión</a>
+            </div>
+        </aside>
+
+        <!-- =================================
+           CONTENIDO PRINCIPAL
+        ================================== -->
+        <main class="admin-content">
+
+            <header class="admin-topbar">
+                <div>
+                    <h1>Nuevo usuario</h1>
+                    <p class="admin-subtitle">Completa los datos para registrar una cuenta en el sistema.</p>
+                </div>
+            </header>
+
+            <form id="formNuevoUsuario" class="form-usuario" novalidate>
+
+                <div class="campo">
+                    <label for="run">RUN (sin puntos ni guion)</label>
+                    <input type="text" id="run" name="run" maxlength="9" placeholder="Ej: 191122334" autocomplete="off">
+                    <span class="mensaje-error" id="errorRun"></span>
+                </div>
+
+                <div class="fila-doble">
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" maxlength="50">
+                        <span class="mensaje-error" id="errorNombre"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" maxlength="100">
+                        <span class="mensaje-error" id="errorApellidos"></span>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="correo" maxlength="100" placeholder="nombre@duoc.cl">
+                    <span class="mensaje-error" id="errorCorreo"></span>
+                </div>
+
+                <div class="fila-doble">
+                    <div class="campo">
+                        <label for="fechaNacimiento">Fecha de nacimiento <span class="opcional">(opcional)</span></label>
+                        <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+                        <span class="mensaje-error" id="errorFechaNacimiento"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="tipoUsuario">Tipo de usuario</label>
+                        <select id="tipoUsuario" name="tipoUsuario">
+                            <option value="">-- Seleccione --</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Vendedor">Vendedor</option>
+                            <option value="Cliente">Cliente</option>
+                        </select>
+                        <span class="mensaje-error" id="errorTipoUsuario"></span>
+                    </div>
+                </div>
+
+                <div class="fila-doble">
+                    <div class="campo">
+                        <label for="region">Región</label>
+                        <select id="region" name="region">
+                            <option value="">-- Seleccione la región --</option>
+                        </select>
+                        <span class="mensaje-error" id="errorRegion"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="comuna">Comuna</label>
+                        <select id="comuna" name="comuna" disabled>
+                            <option value="">-- Seleccione la comuna --</option>
+                        </select>
+                        <span class="mensaje-error" id="errorComuna"></span>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" maxlength="300">
+                    <span class="mensaje-error" id="errorDireccion"></span>
+                </div>
+
+                <div class="acciones-formulario">
+                    <button type="submit" class="btn-primary-admin">Registrar</button>
+                    <a href="usuarios.html" class="btn-secundario-admin">Cancelar</a>
+                </div>
+
+            </form>
+
+        </main>
+    </div>
+
+    <script src="js/regiones.js"></script>
+    <script src="js/usudatos.js"></script>
+    <script src="js/nuevousu.js"></script>
+</body>
+</html>
