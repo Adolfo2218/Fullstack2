@@ -16,7 +16,7 @@
            SIDEBAR ADMINISTRADOR
         ================================== -->
         <aside class="admin-sidebar">
-            <a href="../index.html" class="admin-brand" aria-label="Volver al inicio de la tienda">
+            <a href="index.html" class="admin-brand" aria-label="Volver al inicio de la tienda">
                 <img src="img/logo-home-master-store.png" alt="Tienda de Semillas" class="admin-brand-logo">
             </a>
 
@@ -31,7 +31,7 @@
             </nav>
 
             <div class="admin-nav-footer">
-                <a href="../login.html">Cerrar sesión</a>
+                <a href="index.html" id="linkCerrarSesion">Cerrar sesión</a>
             </div>
         </aside>
 
@@ -127,6 +127,60 @@
 
         </main>
     </div>
+
+    <!-- =================================
+       MODAL: Confirmar cierre de sesión
+    ================================== -->
+    <div class="modal-overlay" id="modalCerrarSesion" hidden>
+        <div class="modal-dialog">
+            <h2>¿Cerrar sesión?</h2>
+            <p>¿Estás seguro de que quieres cerrar sesión?</p>
+            <div class="modal-acciones">
+                <button type="button" class="btn-secundario-admin" id="btnCancelarCerrarSesion">No</button>
+                <button type="button" class="btn-primary-admin" id="btnConfirmarCerrarSesion">Sí</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal de confirmación para "Cerrar sesión".
+        // Autocontenido: no depende de otros archivos js.
+        (function () {
+            const link = document.getElementById("linkCerrarSesion");
+            const modal = document.getElementById("modalCerrarSesion");
+            const btnSi = document.getElementById("btnConfirmarCerrarSesion");
+            const btnNo = document.getElementById("btnCancelarCerrarSesion");
+
+            if (!link || !modal) return;
+
+            link.addEventListener("click", (evento) => {
+                evento.preventDefault();
+                modal.hidden = false;
+            });
+
+            btnNo.addEventListener("click", () => {
+                modal.hidden = true;
+            });
+
+            btnSi.addEventListener("click", () => {
+                window.location.href = link.getAttribute("href");
+            });
+
+            // Cerrar el modal si se hace click fuera del cuadro.
+            modal.addEventListener("click", (evento) => {
+                if (evento.target === modal) {
+                    modal.hidden = true;
+                }
+            });
+
+            // Cerrar el modal con la tecla Escape.
+            document.addEventListener("keydown", (evento) => {
+                if (evento.key === "Escape" && !modal.hidden) {
+                    modal.hidden = true;
+                }
+            });
+        })();
+    </script>
 
     <script src="js/regiones.js"></script>
     <script src="js/usudatos.js"></script>
