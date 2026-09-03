@@ -100,13 +100,15 @@
 }
 
 .equipo-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
 }
 
 .equipo-item {
     padding: 20px 12px;
+    width: 180px;
 }
 
 .equipo-avatar {
@@ -149,6 +151,6 @@
     }
 
     .equipo-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
