@@ -149,7 +149,7 @@
     .valores-grid {
         grid-template-columns: 1fr;
     }
-
+ 
     .equipo-grid {
         gap: 20px;
     }

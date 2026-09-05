@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse | Tienda de Semillas</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/registrar.css">
+</head>
+<body>
+    <div class="hm-wrapper">
+
+        <!-- =================================
+           HEADER MENU
+        ================================== -->
+        <div class="hm-header">
+            <div class="container">
+                <div class="header-menu">
+                    <div class="hm-logo">
+                        <a href="index.html">
+                            <img src="img/logo-home-master-store.png" alt="">
+                        </a>
+                    </div>
+
+                    <nav class="hm-menu">
+                        <ul>
+                            <li><a href="http://">Productos</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="registrar-container">
+            <h2>Registrarse</h2>
+            <p class="registrar-subtitulo">Completa tus datos para crear una cuenta.</p>
+
+            <form id="registrarForm" novalidate>
+
+                <div class="campo">
+                    <label for="run">RUN (sin puntos ni guion)</label>
+                    <input type="text" id="run" name="run" maxlength="9" placeholder="Ej: 191122334" autocomplete="off">
+                    <span class="mensaje-error" id="errorRun"></span>
+                </div>
+
+                <div class="fila-doble">
+                    <div class="campo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" maxlength="50">
+                        <span class="mensaje-error" id="errorNombre"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" name="apellidos" maxlength="100">
+                        <span class="mensaje-error" id="errorApellidos"></span>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="correo" maxlength="100" placeholder="nombre@duoc.cl">
+                    <span class="mensaje-error" id="errorCorreo"></span>
+                </div>
+
+                <div class="fila-doble">
+                    <div class="campo">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" maxlength="10">
+                        <span class="mensaje-error" id="errorPassword"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="confirmPassword">Confirmar contraseña</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" maxlength="10">
+                        <span class="mensaje-error" id="errorConfirmPassword"></span>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="tipoUsuario">Registrarme como</label>
+                    <select id="tipoUsuario" name="tipoUsuario">
+                        <option value="">-- Seleccione --</option>
+                        <option value="Cliente">Cliente</option>
+                        <option value="Vendedor">Vendedor</option>
+                        <option value="Administrador">Administrador</option>
+                    </select>
+                    <span class="mensaje-error" id="errorTipoUsuario"></span>
+                </div>
+
+                <div class="fila-doble">
+                    <div class="campo">
+                        <label for="region">Región</label>
+                        <select id="region" name="region">
+                            <option value="">-- Seleccione la región --</option>
+                        </select>
+                        <span class="mensaje-error" id="errorRegion"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="comuna">Comuna</label>
+                        <select id="comuna" name="comuna" disabled>
+                            <option value="">-- Seleccione la comuna --</option>
+                        </select>
+                        <span class="mensaje-error" id="errorComuna"></span>
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" id="direccion" name="direccion" maxlength="300">
+                    <span class="mensaje-error" id="errorDireccion"></span>
+                </div>
+
+                <button type="submit">Registrarme</button>
+                <button type="button" id="volverLogin" class="secondary-button">Ya tengo cuenta</button>
+
+            </form>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="foo-row">
+                    <div class="foo-col">
+                        <h2>Suscríbete <br>a nuestro newsletter</h2>
+                        <form action="" method="GET">
+                            <div class="f-input">
+                                <input type="text" placeholder="Ingrese su correo">
+                                <button type="submit" class="hm-btn-round btn-primary"><i class="far fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="foo-col">
+                        <ul>
+                            <li><a href="http://">Productos</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="foo-copy">
+            <div class="container">
+                <p>HM STORE 2021 © Todos los derechos reservados</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/regiones.js"></script>
+    <script src="js/usudatos.js"></script>
+    <script src="js/regis.js"></script>
+</body>
+</html>
