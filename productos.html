@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Master Store</title>
+    <title>Productos - Home Master Store</title>
 
     <!-- FUENTE GOOGLE FONTS : Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,36 +18,34 @@
     <!-- Animaciones AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 
-
     <!-- Mis Estilos -->
-     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/blog.css">
-
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
+    <div class="hm-wrapper">   
 
-    <div class="hm-header">
-
+        <!-- =================================
+           HEADER MENU
+        ================================== -->
+        <div class="hm-header">
             <div class="container">
                 <div class="header-menu">
-
                     <div class="hm-logo">
                         <a href="index.html">
-                            <img src="img/logo-home-master-store.png" alt="">
+                            <img src="img/logo-home-master-store.png" alt="Logo">
                         </a>
                     </div>
-
                     <nav class="hm-menu">
                         <ul>
-                            <li><a href="http://">Productos</a></li>
+                            <!-- Nota que aquí le puse el enlace al index al Home y dejé Productos con # -->
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="#">Productos</a></li>
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="nosotros.html">Nosotros</a></li>
                             <li><a href="contacto.html">Contacto</a></li>
                             <li><a href="login.html">Login</a></li>
-
                         </ul>
-
 
                         <div class="hm-icon-cart">
                             <a href="carrito.html">
@@ -55,16 +54,12 @@
                             </a>
                         </div>
                         
-
                         <div class="icon-menu">
                             <button type="button"><i class="fas fa-bars"></i></button>
                         </div>
-
                     </nav>
-
                 </div>
             </div>
-
         </div>
 
         <!-- =================================
@@ -73,106 +68,57 @@
         <div class="header-menu-movil">
             <button class="cerrar-menu"><i class="fas fa-times"></i></button>
             <ul>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Campañas</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Productos</a></li>   
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
 
-    <!-- =================================
-       BLOG
-    ================================== -->
-    <div class="blog-section">
-        <div class="container">
-            <div class="blog-header" data-aos="fade-up">
-                <h1>Blog</h1>
-            </div>
-
-            <div class="blog-grid">
-
-                <div class="blog-card" data-aos="fade-up" data-aos-duration="1000">
-                    <div class="blog-card-img">
-                        <a href="blogs/blog1.html">
-                            <img src="img/1.jpg" alt="Cómo germinar semillas en casa">
-                        </a>
-                        <span class="blog-tag tag-tip">Nuevo</span>
-                    </div>
-                    <div class="blog-card-body">
-                        <a href="blogs/blog1.html">
-                            <h3>Cómo germinar semillas en casa paso a paso</h3>
-                        </a>
-                        <p class="blog-excerpt">Una guía simple para dar el primer paso en tu huerto, desde la elección de la semilla hasta el trasplante.</p>
-                        <a href="blogs/blog1.html" class="blog-readmore">Leer más</a>
-                    </div>
-                </div>
-
-                <div class="blog-card" data-aos="fade-up" data-aos-duration="1250">
-                    <div class="blog-card-img">
-                        <a href="blogs/blog2.html">
-                            <img src="img/c-1.jpg" alt="Huerto urbano en espacios pequeños">
-                        </a>
-                    </div>
-                    <div class="blog-card-body">
-                        <a href="blogs/blog2.html">
-                            <h3>Huerto urbano: cultiva aunque no tengas patio</h3>
-                        </a>
-                        <p class="blog-excerpt">Ideas para aprovechar balcones, ventanas y espacios reducidos y tener tu propia cosecha.</p>
-                        <a href="blogs/blog2.html" class="blog-readmore">Leer más</a>
-                    </div>
-                </div>
-
-                <div class="blog-card" data-aos="fade-up" data-aos-duration="1500">
-                    <div class="blog-card-img">
-                        <a href="blogs/blog3.html">
-                            <img src="img/c-2.jpg" alt="Riego eficiente para tus plantas">
-                        </a>
-                    </div>
-                    <div class="blog-card-body">
-                        <a href="blogs/blog3.html">
-                            <h3>Riego eficiente: cuánta agua necesita tu huerto</h3>
-                        </a>
-                        <p class="blog-excerpt">Aprende a leer tu suelo y tus plantas para regar lo justo y evitar problemas de raíz.</p>
-                        <a href="blogs/blog3.html" class="blog-readmore">Leer más</a>
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-            
+        <!-- =================================
+           CATÁLOGO DE PRODUCTOS
+        ================================== -->
+        <div class="hm-page-block bg-fondo" style="padding-top: 120px;">
             <div class="container">
+                
+                <div class="header-title" data-aos="fade-up">
+                    <h1>Todos nuestros productos</h1>
+                    <p>Explora nuestro catálogo completo</p>
+                </div>
 
+                <!-- AQUÍ SE CARGARÁN TODOS LOS PRODUCTOS -->
+                <div class="grid-product" data-categoria="Todos" data-aos="fade-up" data-aos-duration="1500"></div>
+
+            </div>
+        </div>
+
+        <!-- =================================
+           FOOTER
+        ================================== -->
+        <footer>
+            <div class="container">
                 <div class="foo-row">
                     <div class="foo-col">
                         <h2>Suscríbete <br>a nuestro newsletter</h2>
                         <form action="" method="GET">
-
                             <div class="f-input">
                                 <input type="text" placeholder="Ingrese su correo">
                                 <button type="submit" class="hm-btn-round btn-primary"><i class="far fa-paper-plane"></i></button>
                             </div>
                         </form>
-
                     </div>
-
                     <div class="foo-col">
                         <ul>
+                            <li><a href="index.html">Inicio</a></li>
                             <li><a href="#">Productos</a></li>   
                             <li><a href="blog.html">Blog</a></li>
                             <li><a href="nosotros.html">Nosotros</a></li>
                             <li><a href="contacto.html">Contacto</a></li>
                         </ul>
                     </div>
-
                 </div>
-
             </div>
-
         </footer>
 
         <div class="foo-copy">
@@ -186,17 +132,15 @@
     <!-- Animaciones : AOS-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-    <!-- Mi Script -->
+    <!-- Scripts de la app -->
+    <script src="js/productos.js"></script>
     <script src="js/app.js"></script>
 
     <script>
-    
         AOS.init({
             duration: 1200,
-        })
-
-
+        });
     </script>
-    
+
 </body>
 </html>

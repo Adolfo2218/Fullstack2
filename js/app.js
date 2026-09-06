@@ -52,8 +52,6 @@ menuClose.addEventListener('click', () => {
 // Array para almacenar los productos en el carrito
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-// Seleccionar todos los botones "AGREGAR AL CARRITO"
-const botonesAgregar = document.querySelectorAll('.hm-btn.btn-primary');
 
 // Seleccionar el ícono del carrito y el contador
 const contadorCarrito = document.getElementById('contadorCarrito') || document.querySelector('.hm-icon-cart span');
@@ -79,12 +77,104 @@ function agregarAlCarrito(event) {
 }
 
 
-// Agregar el evento a cada botón "AGREGAR AL CARRITO"
-botonesAgregar.forEach(boton => {
-    boton.addEventListener('click', agregarAlCarrito);
+document.addEventListener('click', function(event) {
+
+    const boton = event.target.closest('.product-item .hm-btn.btn-primary');
+
+    if (!boton) {
+        return;
+    }
+
+    event.preventDefault();
+
+    const tarjeta = boton.closest('.product-item');
+
+    const producto = {
+        nombre: tarjeta.querySelector('h3').textContent,
+        precio: tarjeta.querySelector('.precio span').textContent,
+        imagen: tarjeta.querySelector('img').src
+    };
+
+    carrito.push(producto);
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    actualizarContadorCarrito();
+
+    console.log(carrito);
 });
 
-// Inicializar el contador de productos al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
     actualizarContadorCarrito();
+    cargarProductos(); // <-- ¡Aquí está la magia!
 });
+
+
+
+function crearProductoHTML(producto) {
+
+    const etiqueta = producto.etiqueta
+        ? `<span class="stin ${producto.etiqueta === 'Oferta' ? 'stin-oferta' : 'stin-new'}">
+                ${producto.etiqueta}
+           </span>`
+        : "";
+
+    const precioAnterior = producto.precioAnterior !== undefined
+        ? `<span class="thash">S/ ${producto.precioAnterior.toFixed(2)}</span>`
+        : "";
+
+    return `
+        <div class="product-item">
+
+            <div class="p-portada">
+                <a href="#">
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                </a>
+
+                ${etiqueta}
+            </div>
+
+            <div class="p-info">
+
+                <a href="#">
+                    <h3>${producto.nombre}</h3>
+                </a>
+
+                <div class="precio">
+                    <span>S/ ${producto.precio.toFixed(2)}</span>
+                    ${precioAnterior}
+                </div>
+
+                <a href="#" class="hm-btn btn-primary uppercase">
+                    AGREGAR AL CARRITO
+                </a>
+
+            </div>
+
+        </div>
+    `;
+}
+
+function cargarProductos() {
+    const grids = document.querySelectorAll('.grid-product[data-categoria]');
+
+    grids.forEach(grid => {
+        const categoria = grid.dataset.categoria;
+
+        let productosFiltrados = [];
+
+        // Si la categoría es "Todos", pasamos el array completo sin filtrar
+        if (categoria === 'Todos') {
+            productosFiltrados = productos;
+        } else {
+            // Si es otra categoría, filtramos como lo hacías antes en el index
+            productosFiltrados = productos.filter(
+                producto => producto.categoria === categoria
+            );
+        }
+
+        grid.innerHTML = productosFiltrados
+            .map(producto => crearProductoHTML(producto))
+            .join('');
+    });
+}
