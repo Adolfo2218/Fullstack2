@@ -1,0 +1,259 @@
+.blog-section{
+    padding: 60px 0;
+}
+ 
+.blog-header{
+    margin-bottom: 50px;
+    text-align: center;
+}
+ 
+.blog-header h1{
+    color: var(--color-negro);
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 16px;
+    margin-bottom: 10px;
+}
+ 
+.blog-header h1::after{
+    content: '';
+    width: 76px;
+    height: 5px;
+    background: var(--color-principal);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    border-radius: 3px;
+}
+ 
+.blog-header p{
+    color: #7b7f7d;
+    font-size: 15px;
+    max-width: 520px;
+    margin: 0 auto;
+}
+ 
+/*-------------------------------------------------
+    Grid de tarjetas del blog
+--------------------------------------------------*/
+.blog-grid{
+    display: grid;
+    /* Ajusta automáticamente las columnas según el espacio libre sin estirar demasiado las tarjetas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    /* Centra las tarjetas cuando son pocas o el ancho de la pantalla lo requiere */
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ 
+/*-------------------------------------------------
+    Tarjeta individual (post)
+--------------------------------------------------*/
+.blog-card{
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    transition: transform .3s ease, box-shadow .3s ease;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.blog-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.12);
+}
+ 
+/* Imagen de portada */
+.blog-card .blog-card-img{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+ 
+.blog-card .blog-card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+ 
+.blog-card:hover .blog-card-img img{
+    transform: scale(1.08);
+}
+ 
+/* Etiquetas tipo "Nuevo" / "Tip" sobre la imagen */
+.blog-card .blog-tag{
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 5px 14px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    border-radius: 20px;
+    color: #fff;
+    background: var(--color-principal);
+    z-index: 2;
+}
+ 
+.blog-card .blog-tag.tag-tip{
+    background: var(--color-verde);
+}
+ 
+/* Cuerpo de texto de la tarjeta */
+.blog-card .blog-card-body{
+    padding: 22px 20px 26px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+ 
+.blog-card .blog-meta{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+    color: #9a9d9b;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+ 
+.blog-card .blog-meta i{
+    color: var(--color-principal);
+    margin-right: 4px;
+}
+ 
+.blog-card h3{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--color-negro);
+    margin-bottom: 12px;
+    transition: color .25s ease;
+}
+ 
+.blog-card a:hover h3{
+    color: var(--color-principal);
+}
+ 
+.blog-card .blog-excerpt{
+    font-size: 14px;
+    line-height: 1.6;
+    color: #74796f;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+ 
+/* Botón "Leer más" */
+.blog-card .blog-readmore{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    align-self: center;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    color: #fff;
+    background: var(--color-principal);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background .25s ease, transform .2s ease;
+}
+ 
+.blog-card .blog-readmore i{
+    transition: transform .25s ease;
+}
+ 
+.blog-card .blog-readmore:hover{
+    background: var(--color-primary-hover);
+}
+ 
+.blog-card .blog-readmore:hover i{
+    transform: translateX(4px);
+}
+ 
+/*-------------------------------------------------
+    Vista de detalle del blog (blog-detalle.html)
+--------------------------------------------------*/
+.blog-detalle{
+    padding: 60px 0;
+}
+
+.blog-detalle .container{
+    background-color: #f7f5f0;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    padding: 40px 30px;    
+}
+ 
+
+.blog-detalle .blog-detalle-img{
+    width: 100%;
+    max-width: 500px;
+    height: 260px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto 30px;
+}
+
+.blog-detalle .blog-detalle-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+.blog-detalle h1{
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--color-negro);
+    margin-bottom: 24px;
+    line-height: 1.3;
+}
+ 
+.blog-detalle .blog-contenido p{
+    font-size: 15px;
+    line-height: 1.9;
+    color: #5c605c;
+    margin-bottom: 20px;
+}
+ 
+.blog-detalle .blog-volver{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-negro);
+}
+ 
+.blog-detalle .blog-volver:hover{
+    color: var(--color-principal);
+}
+ 
+/*-------------------------------------------------
+    Responsivo
+--------------------------------------------------*/
+@media screen and (max-width: 575px){
+    .blog-header h1{
+        font-size: 24px;
+    }
+ 
+    .blog-detalle .blog-detalle-img{
+        height: 220px;
+    }
+ 
+    .blog-detalle h1{
+        font-size: 22px;
+    }
+}

@@ -25,13 +25,11 @@
                     </div>
 
                     <nav class="hm-menu">
-                        <ul>
-                            <li><a href="http://">Productos</a></li>
-                            <li><a href="http://">Campañas</a></li>
-                            <li><a href="http://">Nosotros</a></li>
-                            <li><a href="http://">Contacto</a></li>
-                            <li><a href="login.html">Login</a></li>
-
+                       <ul>
+                            <li><a href="#">Productos</a></li>   
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="contacto.html">Contacto</a></li>
                         </ul>
 
 
@@ -44,9 +42,10 @@
         </div>
     <div class="login-container">
         <h2>Iniciar Sesión</h2>
+        <p id="avisoRegistro" style="color: #2f4f3e; display: none;">Cuenta creada correctamente. Ya puedes iniciar sesión.</p>
         <form id="loginForm">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" required>
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo" required>
             
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" required>
@@ -56,9 +55,10 @@
             <button type="button" id="registerButton" class="secondary-button">Registrarse</button>
             
         </form>
-        <p id="loginError" style="color: red; display: none;">Usuario o contraseña incorrectos</p>
+        <p id="loginError" style="color: red; display: none;">Correo o contraseña incorrectos</p>
     </div>
 
+<script src="js/usudatos.js"></script>
 <script src="js/logReg.js"></script>
 
 <footer>
@@ -80,9 +80,9 @@
 
             <div class="foo-col">
                 <ul>
-                   <li><a href="http://">Productos</a></li>
-                   <li><a href="http://">Campañas</a></li>
-                   <li><a href="http://">Nosotros</a></li>
+                   <li><a href="productos.html">Productos</a></li>
+                   <li><a href="blog.html">Blog</a></li>
+                   <li><a href="nosotros.html">Nosotros</a></li>
                    <li><a href="contacto.html">Contacto</a></li>
                    <li><a href="http://">Enlace 01</a></li>
                    <li><a href="http://">Enlace 02</a></li>

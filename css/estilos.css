@@ -664,3 +664,126 @@ footer .foo-row .foo-col ul li a:hover{
 
     
 }
+
+/* =========================================
+   Página Registrarse · Tienda de Semillas
+   (se suma a css/login.css, no lo reemplaza)
+========================================= */
+
+.registrar-container {
+    max-width: 620px;
+    margin: 50px auto;
+    padding: 36px 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.registrar-container h2 {
+    margin: 0 0 6px;
+    text-align: center;
+    color: #2f4f3e;
+}
+
+.registrar-subtitulo {
+    text-align: center;
+    color: #6c766f;
+    font-size: 14px;
+    margin: 0 0 28px;
+}
+
+.registrar-container .campo {
+    margin-bottom: 18px;
+}
+
+.registrar-container .fila-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.registrar-container label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #22281f;
+    margin-bottom: 6px;
+}
+
+.registrar-container input,
+.registrar-container select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e1ddd2;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #22281f;
+}
+
+.registrar-container input:focus,
+.registrar-container select:focus {
+    outline: none;
+    border-color: #3f6d54;
+    box-shadow: 0 0 0 3px #e7f0ea;
+}
+
+.registrar-container input.campo-invalido,
+.registrar-container select.campo-invalido {
+    border-color: #e2574c;
+}
+
+.registrar-container .mensaje-error {
+    display: block;
+    min-height: 16px;
+    font-size: 12px;
+    color: #e2574c;
+    margin-top: 4px;
+}
+
+.registrar-container button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #2f4f3e;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+.registrar-container button[type="submit"]:hover {
+    background-color: #3f6d54;
+}
+
+.registrar-container .secondary-button {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: #2f4f3e;
+    border: 1px solid #e1ddd2;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.registrar-container .secondary-button:hover {
+    border-color: #3f6d54;
+}
+
+@media (max-width: 640px) {
+    .registrar-container {
+        margin: 24px 16px;
+        padding: 28px 22px;
+    }
+
+    .registrar-container .fila-doble {
+        grid-template-columns: 1fr;
+    }
+}
