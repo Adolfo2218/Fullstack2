@@ -788,29 +788,124 @@ footer .foo-row .foo-col ul li a:hover{
     }
 }
 
+
+
+
+
+
+
+
+
     
-        .producto-carrito {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .imagen-producto-carrito {
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
-        }
-        .info-producto {
-            flex-grow: 1;
-        }
-        .btn-eliminar {
-            background-color: #ff4d4d;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .btn-eliminar:hover {
-            background-color: #ff3333;
-        }
+/* =========================================
+   CARRITO
+========================================= */
+
+
+
+
+
+/* Contenedor general del carrito */
+#listaCarrito{
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#listaCarrito li{
+    margin-bottom: 16px;
+}
+
+/* Tarjeta de cada producto */
+.producto-carrito{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    padding: 15px 20px;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.producto-carrito:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+}
+
+/* Imagen del producto */
+.imagen-producto-carrito{
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* Info del producto (nombre y precio) */
+.info-producto{
+    flex-grow: 1;
+}
+
+.info-producto h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-negro);
+    margin-bottom: 6px;
+}
+
+.info-producto p{
+    font-size: 14px;
+    color: var(--color-principal);
+    font-weight: 600;
+}
+
+/* Botón eliminar */
+.btn-eliminar{
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease;
+    flex-shrink: 0;
+}
+
+.btn-eliminar:hover{
+    background: #c0392b;
+}
+
+/* Título y total */
+h1{
+    text-align: center;
+    color: var(--color-negro);
+    margin: 40px 0 20px;
+}
+
+#totalCarrito{
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+/* Botón de checkout */
+#checkoutBtn{
+    display: block;
+    margin: 0 auto 60px;
+    padding: 14px 40px;
+    border-radius: 25px;
+}
+
+/* Responsivo */
+@media screen and (max-width: 575px){
+    .producto-carrito{
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+}
     
